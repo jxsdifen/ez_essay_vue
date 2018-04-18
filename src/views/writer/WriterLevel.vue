@@ -20,7 +20,7 @@
                 <el-table-column prop="badge" label="徽章" min-width="300" sortable>
                 </el-table-column>
                 <el-table-column label="操作" width="100">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-button type="text" @click="handleEdit(scope.$index, scope.row)">修改</el-button>
                     </template>
                 </el-table-column>

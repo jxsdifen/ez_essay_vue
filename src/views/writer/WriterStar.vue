@@ -18,7 +18,7 @@
                 <el-table-column prop="ename" label="英文名称" width="300" sortable>
                 </el-table-column>
                 <el-table-column label="操作" min-width="200">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-button type="text" @click="handleEdit(scope.$index, scope.row)">修改</el-button><i class="gap"/><el-button type="text">标签</el-button>
                     </template>
                 </el-table-column>

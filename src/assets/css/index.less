@@ -1,0 +1,212 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: SourceHanSansCN-Normal, sans-serif, Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, SimSun;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #eff3f6;
+}
+
+.ez-color-blue{ color: #3192f0;}
+.ez-color-red{ color: #dc4826;}
+.ez-color-red2{ color: #ef1c25;}
+.ez-color-green{ color: #83cf13;}
+.ez-color-green2{ color: #1db934;}
+.ez-bgcolor-blue{ background-color: #3192f0;}
+.ez-bgcolor-red{ background-color: #dc4826;}
+.ez-bgcolor-red2{ background-color: #ef1c25;}
+.ez-bgcolor-green{ background-color: #83cf13;}
+.ez-bgcolor-green2{ background-color: #1db934;}
+
+.ez-font-b{ font-weight: bold;}
+.ez-font-16{ font-size: 16px;}
+.ez-font-14{ font-size: 14px;}
+.ez-font-12{ font-size: 12px;}
+
+.ez-icon{width: 18px;height: 18px;}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both
+}
+
+// .el-form-item{
+//   height: 36px;
+
+//   .el-form-item__content{
+//     height: 36px;
+//     line-height: 36px;
+//     .el-input__inner{
+//       padding: 0 10px;
+//       height: 36px;
+//     }
+//   }
+
+//   .el-button{
+//     padding: 10px 15px;
+//   }
+// }
+
+// 通用列表
+.el-table {
+    font-size: 14px;
+    th,td{
+        padding: 0;
+        height: 48px;
+    }
+    th{
+        text-overflow: ellipsis;
+        background-color: #fafafa;
+    }
+    .el-button{
+        padding: 0;
+    }
+    // 分隔线
+    .gap{
+        position: relative;
+        display: inline-block;
+        margin: 0 7px 0 6px;
+        width: 1px;
+        height: 16px;
+        vertical-align: middle;
+        &:before{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 1px;
+            height: 16px;
+            border-right: 1px solid #e6eaee;
+        }
+    }
+}
+// 分页
+.pagination{
+    float: none;
+    margin: 10px 0px 0 0;
+    padding: 10px;
+    clear: both;
+    height: 50px;
+    background: #fff;
+}
+
+/* 面包屑 */
+.el-breadcrumb{
+    .el-breadcrumb__item{
+        .el-breadcrumb__inner, 
+        .el-breadcrumb__inner a{
+            font-weight: normal;
+        }
+        &:last-child{
+            .el-breadcrumb__inner,
+            .el-breadcrumb__inner:hover{
+                color: #3192f0;
+            }
+        }
+    }
+    .el-breadcrumb__separator{
+        margin: 0 5px;
+    }
+}
+
+// 带icon的按钮
+.el-button{
+    height: 38px;
+    line-height: 1;
+    &.common-icon-btn{
+        padding: 9px 20px;
+        // width: 130px;
+        background-color: #f2f4f7;
+        border-radius: 4px;
+        border: solid 1px #dfe3e9;
+        font-weight: normal;
+        i{
+            margin-right: 5px;
+            vertical-align: middle;
+            color: #0078d7;
+            font-size: 20px;
+            line-height: 1;
+        }
+    }
+}
+
+// 通用标签
+.common-title{
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1;
+    color: #333;
+    background-color: #fff;
+    i{
+        margin-right: 10px;
+        display: inline-block;
+        width: 4px;
+        height: 16px;
+        background-color: #3291ee;
+        vertical-align: middle;
+    }
+}
+
+// 通用线
+.top-line{
+    border-top: solid 1px #dfe3e9;
+}
+.bottom-line{
+    border-bottom: solid 1px #dfe3e9;
+}
+
+.el-tabs{
+    padding: 0 20px;
+    .el-tabs__nav{
+        height: 56px;
+        line-height: 56px;
+    }
+    .el-tabs__item{
+        font-size: 16px;
+        padding: 0 20px;
+    }
+}
+
+// 菜单
+.el-menu-item-group{
+    // 标签清空
+    .el-menu-item-group__title{
+        display: none;
+    }
+}
+
+.avatar-uploader {
+    .el-upload {
+        border: 1px dashed #000;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        &:hover{
+            border-color: #409EFF;
+        }
+
+        .avatar-uploader-icon {
+            margin-top: 20px;
+            font-size: 40px;
+            color: #3192f0;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .avatar {
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+        .el-dragger__text{
+            line-height: 40px;
+            font-size: 14px;
+        }
+    }
+}

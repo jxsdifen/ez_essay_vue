@@ -28,7 +28,7 @@
                 <el-table-column prop="state" label="状态" width="100" :formatter="formatState" sortable>
                 </el-table-column>
                 <el-table-column label="操作" width="200">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-button type="text" @click="handleEdit(scope.$index, scope.row)">修改</el-button><i class="gap"/><el-button type="text">权限授权</el-button><i class="gap"/><el-button type="text">成员</el-button>
                     </template>
                 </el-table-column>

@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: SourceHanSansCN-Normal, sans-serif, Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, SimSun;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #eff3f6;
+}
+.ez-color-blue {
+  color: #3192f0;
+}
+.ez-color-red {
+  color: #dc4826;
+}
+.ez-color-red2 {
+  color: #ef1c25;
+}
+.ez-color-green {
+  color: #83cf13;
+}
+.ez-color-green2 {
+  color: #1db934;
+}
+.ez-bgcolor-blue {
+  background-color: #3192f0;
+}
+.ez-bgcolor-red {
+  background-color: #dc4826;
+}
+.ez-bgcolor-red2 {
+  background-color: #ef1c25;
+}
+.ez-bgcolor-green {
+  background-color: #83cf13;
+}
+.ez-bgcolor-green2 {
+  background-color: #1db934;
+}
+.ez-font-b {
+  font-weight: bold;
+}
+.ez-font-16 {
+  font-size: 16px;
+}
+.ez-font-14 {
+  font-size: 14px;
+}
+.ez-font-12 {
+  font-size: 12px;
+}
+.ez-icon {
+  width: 18px;
+  height: 18px;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.el-table {
+  font-size: 14px;
+}
+.el-table th,
+.el-table td {
+  padding: 0;
+  height: 48px;
+}
+.el-table th {
+  text-overflow: ellipsis;
+  background-color: #fafafa;
+}
+.el-table .el-button {
+  padding: 0;
+}
+.el-table .gap {
+  position: relative;
+  display: inline-block;
+  margin: 0 7px 0 6px;
+  width: 1px;
+  height: 16px;
+  vertical-align: middle;
+}
+.el-table .gap:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 1px;
+  height: 16px;
+  border-right: 1px solid #e6eaee;
+}
+.pagination {
+  float: none;
+  margin: 10px 0px 0 0;
+  padding: 10px;
+  clear: both;
+  height: 50px;
+  background: #fff;
+}
+/* 面包屑 */
+.el-breadcrumb .el-breadcrumb__item .el-breadcrumb__inner,
+.el-breadcrumb .el-breadcrumb__item .el-breadcrumb__inner a {
+  font-weight: normal;
+}
+.el-breadcrumb .el-breadcrumb__item:last-child .el-breadcrumb__inner,
+.el-breadcrumb .el-breadcrumb__item:last-child .el-breadcrumb__inner:hover {
+  color: #3192f0;
+}
+.el-breadcrumb .el-breadcrumb__separator {
+  margin: 0 5px;
+}
+.el-button {
+  height: 38px;
+  line-height: 1;
+}
+.el-button.common-icon-btn {
+  padding: 9px 20px;
+  background-color: #f2f4f7;
+  border-radius: 4px;
+  border: solid 1px #dfe3e9;
+  font-weight: normal;
+}
+.el-button.common-icon-btn i {
+  margin-right: 5px;
+  vertical-align: middle;
+  color: #0078d7;
+  font-size: 20px;
+  line-height: 1;
+}
+.common-title {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1;
+  color: #333;
+  background-color: #fff;
+}
+.common-title i {
+  margin-right: 10px;
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: #3291ee;
+  vertical-align: middle;
+}
+.top-line {
+  border-top: solid 1px #dfe3e9;
+}
+.bottom-line {
+  border-bottom: solid 1px #dfe3e9;
+}
+.el-tabs {
+  padding: 0 20px;
+}
+.el-tabs .el-tabs__nav {
+  height: 56px;
+  line-height: 56px;
+}
+.el-tabs .el-tabs__item {
+  font-size: 16px;
+  padding: 0 20px;
+}
+.el-menu-item-group .el-menu-item-group__title {
+  display: none;
+}
+.avatar-uploader .el-upload {
+  border: 1px dashed #000;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader .el-upload .avatar-uploader-icon {
+  margin-top: 20px;
+  font-size: 40px;
+  color: #3192f0;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.avatar-uploader .el-upload .avatar {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.avatar-uploader .el-upload .el-dragger__text {
+  line-height: 40px;
+  font-size: 14px;
+}

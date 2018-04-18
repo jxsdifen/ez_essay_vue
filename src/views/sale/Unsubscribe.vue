@@ -32,7 +32,7 @@
                 <el-table-column prop="date" label="退订时间" width="180" sortable>
                 </el-table-column>
                 <el-table-column label="操作" width="100">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-button type="text" @click="handleEdit(scope.$index, scope.row)">删除</el-button><i class="gap"/><el-button type="text">日志</el-button>
                     </template>
                 </el-table-column>
