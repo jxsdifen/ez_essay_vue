@@ -6,6 +6,14 @@ body{
     -webkit-font-smoothing: antialiased;
     background-color: #eff3f6;
 }
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.pull-left{float: left;}
+.pull-right{float: right;}
 
 .ez-color-blue{ color: #3192f0;}
 .ez-color-red{ color: #dc4826;}
@@ -25,31 +33,119 @@ body{
 
 .ez-icon{width: 18px;height: 18px;}
 
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    content: "";
+.clearfix{
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both
+    }
 }
-.clearfix:after {
-    clear: both
+// Mixin
+.clearfix() {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+// 加省略号(行数)
+.line-ellipsis(@num:1){
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @num;
+    -webkit-box-orient: vertical;
 }
 
-// .el-form-item{
-//   height: 36px;
+.no-overflow{overflow: hidden;}
 
-//   .el-form-item__content{
-//     height: 36px;
-//     line-height: 36px;
-//     .el-input__inner{
-//       padding: 0 10px;
-//       height: 36px;
-//     }
-//   }
+.no-margin{ margin: 0!important;}
+.no-margin-top{ margin-top: 0!important;}
+.no-margin-bottom{ margin-bottom: 0!important;}
+.no-margin-left{ margin-left: 0!important;}
+.no-margin-right{ margin-right: 0!important;}
 
-//   .el-button{
-//     padding: 10px 15px;
-//   }
-// }
+.no-padding{ padding: 0!important;}
+.no-padding-top{ padding-top: 0!important;}
+.no-padding-bottom{ padding-bottom: 0!important;}
+.no-padding-left{ padding-left: 0!important;}
+.no-padding-right{ padding-right: 0!important;}
+
+.mp-loop(@n, @i:10) when (@i <= @n) {
+    .m-@{i}{ margin: (@i * 1px);}
+    .p-@{i}{ padding: (@i * 1px);}
+
+    .mt-@{i}{ margin-top: (@i * 1px);}
+    .mb-@{i}{ margin-bottom: (@i * 1px);}
+    .ml-@{i}{ margin-left: (@i * 1px);}
+    .mr-@{i}{ margin-right: (@i * 1px);}
+
+    .pt-@{i}{ padding-top: (@i * 1px);}
+    .pb-@{i}{ padding-bottom: (@i * 1px);}
+    .pl-@{i}{ padding-left: (@i * 1px);}
+    .pr-@{i}{ padding-right: (@i * 1px);}
+    .mp-loop(@n, (@i + 10));
+}
+//调用
+.mp-loop(50)!important;
+
+// bg-color
+.bg-red{background-color: #dc4826!important;}
+.bg-blue{background-color: #3192f0!important;}
+.bg-green{background-color: #83cf13!important;}
+.bg-orange{background-color: #ff7f1a!important;}
+
+
+// ========= 栅格化----24等分 ======start
+.row-10{
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.col-ez-3{
+    float: left;
+    width: 12.5%;
+    padding: 0 10px;
+}
+/* 小屏幕（< 768px） */
+@media screen and (max-width: 768px) {
+    .col-ez-3{
+        width: 50%;
+    }
+}
+/* 中等屏幕（> 768px and <991px） */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .col-ez-3{
+        width: 50%;
+    }
+}
+/* 中等屏幕（> 992px and <1199px） */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .col-ez-3{
+        width: 25%;
+    }
+}
+/* 大屏幕（>= 1200px） */
+@media screen and (min-width: 1200px) {
+    .col-ez-3{
+        width: 12.5%;
+    }
+}
+// ========= 栅格化----24等分 ======end
+
+
+// ul清除样式
+.ul-nostyle{
+    padding: 0!important;
+    li{
+        list-style-type: none!important;
+    }
+}
 
 // 通用列表
 .el-table {
@@ -115,23 +211,24 @@ body{
 
 // 带icon的按钮
 .el-button{
+    padding: 0;
     height: 38px;
     line-height: 1;
-    &.common-icon-btn{
-        padding: 9px 20px;
-        // width: 130px;
-        background-color: #f2f4f7;
-        border-radius: 4px;
-        border: solid 1px #dfe3e9;
-        font-weight: normal;
-        i{
-            margin-right: 5px;
-            vertical-align: middle;
-            color: #0078d7;
-            font-size: 20px;
-            line-height: 1;
-        }
-    }
+    // &.common-icon-btn{
+    //     padding: 9px 0;
+    //     // width: 130px;
+    //     background-color: #f2f4f7;
+    //     border-radius: 4px;
+    //     border: solid 1px #dfe3e9;
+    //     font-weight: normal;
+    //     i{
+    //         margin-right: 5px;
+    //         vertical-align: middle;
+    //         color: #0078d7;
+    //         font-size: 20px;
+    //         line-height: 1;
+    //     }
+    // }
 }
 
 // 通用标签
@@ -142,6 +239,7 @@ body{
     color: #333;
     background-color: #fff;
     i{
+        float: left;
         margin-right: 10px;
         display: inline-block;
         width: 4px;
@@ -172,6 +270,13 @@ body{
 }
 
 // 菜单
+.el-menu{
+    .el-menu-item,
+    .el-submenu__title{
+        height: 46px;
+        line-height: 46px;
+    }
+}
 .el-menu-item-group{
     // 标签清空
     .el-menu-item-group__title{
@@ -207,6 +312,232 @@ body{
         .el-dragger__text{
             line-height: 40px;
             font-size: 14px;
+        }
+    }
+}
+
+
+// 通用按钮
+@search-border: transparent;@search-bg: #23a1f8;@search-color: #fff;
+@search-hover-border: #3392f0;@search-hover-bg: #5bacfc;@search-hover-color: #fff;
+@search-click-border: #3392f0;@search-click-bg: #2083e4;@search-click-color: #fff;
+
+@add-border: transparent;@add-bg: #1cb02e;@add-color: #fff;
+@add-hover-border: #4cf162;@add-hover-bg: #4cf162;@add-hover-color: #fff;
+@add-click-border: #0eae26;@add-click-bg: #0eae26;@add-click-color: #fff;
+
+@del-border: transparent;@del-bg: #d83f22;@del-color: #fff;
+@del-hover-border: #fc7354;@del-hover-bg: #fc7354;@del-hover-color: #fff;
+@del-click-border: #dc4826;@del-click-bg: #c63717;@del-click-color: #fff;
+
+@edit-border: #3192f0;@edit-bg: #edf8fe;@edit-color: #3192f0;
+@edit-hover-border: #3192f0;@edit-hover-bg: #1f97f7;@edit-hover-color: #fff;
+@edit-click-border: #3192f0;@edit-click-bg: #1c77e0;@edit-click-color: #fff;
+
+@copy-border: #dfe3e9;@copy-bg: #f2f4f7;@copy-color: #8a9099;
+@copy-hover-border: transparent;@copy-hover-bg: #f0f0f0;@copy-hover-color: #333;
+@copy-click-border: transparent;@copy-click-bg: #ccc;@copy-click-color: #333;
+@copy-icon-color: #3192f0;
+
+@gray-border: #dfe3e9;@gray-bg: #abbac3;@gray-color: #fff;
+@gray-hover-border: #dfe3e9;@gray-hover-bg: #ccc;@gray-hover-color: #fff;
+@gray-click-border: #dfe3e9;@gray-click-bg: #abbac3;@gray-click-color: #fff;
+.common-btn{
+    // float: left;
+    min-width: 100px;
+    padding: 6px 12px;
+    height: 38px;
+    line-height: 1;
+    background-color: #f2f4f7;
+    border-radius: 4px;
+    border: solid 1px #dfe3e9;
+    font-weight: normal;
+    box-sizing: border-box;
+    i{
+        margin-right: 5px;
+        vertical-align: middle;
+        color: @copy-icon-color;
+        font-size: 20px;
+        line-height: 1;
+    }
+    &.blue,
+    &.btn-edit{
+        border: solid 1px @edit-border;
+        background-color: @edit-bg;
+        color: @edit-color;
+        &:hover{
+            border-color: @edit-hover-border;
+            background-color: @edit-hover-bg;
+            color: @edit-hover-color;
+        }
+        &:active{
+            border-color: @edit-click-border;
+            background-color: @edit-click-bg;
+            color: @edit-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+    &.blue-bg,
+    &.btn-search,
+    &.btn-toolbar{
+        border: @search-border;
+        background-color: @search-bg;
+        color: @search-color;
+        &:hover{
+            border-color: @search-hover-border;
+            background-color: @search-hover-bg;
+            color: @search-hover-color;
+        }
+        &:active{
+            border-color: @search-click-border;
+            background-color: @search-click-bg;
+            color: @search-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+        i{
+            color: @search-color;
+            font-size: 16px;
+        }
+    }
+    &.gray,
+    &.btn-return,
+    &.btn-copy{
+        border: solid 1px @copy-border;
+        background-color: @copy-bg;
+        color: @copy-color;
+        &:hover{
+            border-color: @copy-hover-border;
+            background-color: @copy-hover-bg;
+            color: @copy-hover-color;
+        }
+        &:active{
+            border-color: @copy-click-border;
+            background-color: @copy-click-bg;
+            color: @copy-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+        i{
+            color: @copy-icon-color;
+            font-size: 16px;
+        }
+    }
+    &.gray-bg{
+        border: solid 1px @gray-border;
+        background-color: @gray-bg;
+        color: @gray-color;
+        &:hover{
+            border-color: @gray-hover-border;
+            background-color: @gray-hover-bg;
+            color: @gray-hover-color;
+        }
+        &:active{
+            border-color: @gray-click-border;
+            background-color: @gray-click-bg;
+            color: @gray-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+        i{
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+    &.green-bg,
+    &.btn-add{
+        border: solid 1px @add-border;
+        background-color: @add-bg;
+        color: @add-color;
+        &:hover{
+            border-color: @add-hover-border;
+            background-color: @add-hover-bg;
+            color: @add-hover-color;
+        }
+        &:active{
+            border-color: @add-click-border;
+            background-color: @add-click-bg;
+            color: @add-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+        i{
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+    &.red-bg,
+    &.btn-del{
+        border: solid 1px @del-border;
+        background-color: @del-bg;
+        color: @del-color;
+        &:hover{
+            border-color: @del-hover-border;
+            background-color: @del-hover-bg;
+            color: @del-hover-color;
+        }
+        &:active{
+            border-color: @del-click-border;
+            background-color: @del-click-bg;
+            color: @del-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+        i{
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}
+.fc-button{
+    &.blue-bg,
+    &.btn-search,
+    &.btn-toolbar,
+    &.fc-today-button{
+        border: @search-border!important;
+        background-color: @search-bg!important;
+        color: @search-color!important;
+        &:hover{
+            border: solid 1px @search-hover-border!important;
+            background-color: @search-hover-bg!important;
+            color: @search-hover-color!important;
+        }
+        &:active{
+            border: solid 1px @search-click-border!important;
+            background-color: @search-click-bg!important;
+            color: @search-click-color!important;
+            box-shadow: none!important;
+            outline: none!important;
+        }
+        i{
+            color: @search-color!important;
+            font-size: 16px;
+        }
+    }
+    &.gray,
+    &.btn-return,
+    &.btn-copy,
+    &.fc-prev-button,
+    &.fc-next-button{
+        border: solid 1px @copy-border;
+        background-color: @copy-bg;
+        color: @copy-color;
+        &:hover{
+            border: @copy-hover-border;
+            background-color: @copy-hover-bg;
+            color: @copy-hover-color;
+        }
+        &:active{
+            border: @copy-click-border;
+            background-color: @copy-click-bg;
+            color: @copy-click-color;
+            box-shadow: none;
+            outline: none;
+        }
+        i{
+            color: @copy-icon-color;
+            font-size: 16px;
         }
     }
 }

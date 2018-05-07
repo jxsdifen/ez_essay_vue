@@ -25,7 +25,7 @@
                 </el-form>
             </el-col>
 
-            <!-- 列表 -->
+            <!-- 表格 -->
             <el-table :data="memberData" highlight-current-row v-loading="listLoading" style="width: 100%;">
                 <el-table-column type="selection" width="55">
                 </el-table-column>

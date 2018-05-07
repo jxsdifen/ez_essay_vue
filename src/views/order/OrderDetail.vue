@@ -1,84 +1,84 @@
 <template>
     <section>
         <!-- 内容左侧 -->
-        <div class="container-left">
-            <div class="control-list">
-                <el-button type="primary" plain class="btn-edit">修改</el-button>
-                <el-button class="common-icon-btn btn-copy">复制</el-button>
-                <el-button class="common-icon-btn btn-download" icon="el-icon-download">一键下载该文件</el-button>
-                <el-button type="primary" plain class="btn-add">添加待办</el-button>
+        <div class="container-left" ref="con_Left">
+            <div class="control-list" ref="con_LeftCtrlList">
+                <el-button class="common-btn btn-edit">修改</el-button>
+                <el-button class="common-btn btn-copy"><i class="iconfont icon-caogaoxiang"></i>复制</el-button>
+                <el-button class="common-btn btn-download gray" icon="el-icon-download">所有文件下载</el-button>
+                <el-button class="common-btn btn-add">添加一个事件</el-button>
             </div>
 
-            <div class="main">
+            <div class="container-left-main mt-20" ref="con_LeftMain" id="con_LeftMain" :style="{'height': con_LeftMain_h+'px'}">
                 <!-- 流程进度 -->
-                <div class="card-info">
-                    <div class="common-title bottom-line"><i/>流程进度</div>
+                <div class="card-info no-margin-top">
+                    <div class="common-title bottom-line"><i></i>流程进度</div>
                     <div class="process clearfix">
                         <div class="process-item focus">
-                            <div class="point"></div>
-                            <h5>写手接单</h5>
+                            <div class="point"><span></span><i></i></div>
+                            <h5>写手接单11</h5>
+                            <h6 class="state">已接单</h6>
+                            <h6 class="name">等待财务支付写手等待财务支付写手等待财务支付写手</h6>
+                            <h6 class="date">2018-3-2 12:41:43</h6>
+                        </div>
+                        <div class="process-item focus">
+                            <div class="point"><span></span><i></i></div>
+                            <h5>提交作业2</h5>
                             <h6 class="state">已接单</h6>
                             <h6 class="name">派单员jack</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item focus">
-                            <div class="point"></div>
-                            <h5>提交作业</h5>
+                            <div class="point"><span></span><i></i></div>
+                            <h5>作业检查3</h5>
                             <h6 class="state">已接单</h6>
                             <h6 class="name">派单员jack</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item focus">
-                            <div class="point"></div>
-                            <h5>作业检查</h5>
+                            <div class="point"><span></span><i></i></div>
+                            <h5>订单完成4</h5>
                             <h6 class="state">已接单</h6>
                             <h6 class="name">派单员jack</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item focus">
-                            <div class="point"></div>
-                            <h5>订单完成</h5>
-                            <h6 class="state">已接单</h6>
-                            <h6 class="name">派单员jack</h6>
-                            <h6 class="date">2018-3-2 12:41:43</h6>
-                        </div>
-                        <div class="process-item focus">
-                            <div class="point"></div>
-                            <h5>支付尾款</h5>
+                            <div class="point"><span></span><i></i></div>
+                            <h5>支付尾款5</h5>
                             <h6 class="state">等待财务支付写手</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
 
                         <div class="process-item focus">
-                            <div class="point"></div>
+                            <div class="point"><span></span><i></i></div>
                             <h5>写手接单6</h5>
                             <h6 class="state">已接单</h6>
                             <h6 class="name">派单员jack</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item">
-                            <div class="point"></div>
+                            <div class="point"><span></span><i></i></div>
                             <h5>提交作业7</h5>
                             <h6 class="state">已接单</h6>
                             <h6 class="name">派单员jack</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item">
-                            <div class="point"></div>
+                            <div class="point"><span></span><i></i></div>
                             <h5>作业检查8</h5>
                             <h6 class="state">已接单</h6>
-                            <h6 class="name">派单员jack</h6>
+                            <h6 class="name">审核老师:yangrenjie</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item">
-                            <div class="point"></div>
+                            <div class="point"><span></span><i></i></div>
                             <h5>订单完成9</h5>
                             <h6 class="state">已接单</h6>
                             <h6 class="name">派单员jack</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
                         </div>
                         <div class="process-item">
-                            <div class="point"></div>
+                            <div class="point"><span></span><i></i></div>
                             <h5>支付尾款10</h5>
                             <h6 class="state">等待财务支付写手</h6>
                             <h6 class="date">2018-3-2 12:41:43</h6>
@@ -95,7 +95,7 @@
                             <div class="col">国家时区：<span>北美太平洋标准时间（America/Los_Angeles）</span></div>
                         </div>
                         <div class="item">
-                            <div class="col">截止日期：<span>2018-01-26 23:13:00<br/>（<span class="blue">客户所在时区日期：2018-01-26 07:13:00</span>）</span></div>
+                            <div class="col">截止日期：<span>2018-01-26 23:13:00<br/><span class="blue">（客户所在时区日期：2018-01-26 07:13:00）</span></span></div>
                             <div class="col">写手等级要求：<span>金牌老师</span></div>
                         </div>
                         <div class="item">
@@ -122,21 +122,36 @@
                             <div class="file-title">论文命题</div>
                             <div class="file-list clearfix">
                                 <div class="file-item">
-                                    <img class="file-img" src="@/assets/images/pdf.png" alt="">
+                                    <a href="javascript:;">
+                                        <div class="file-img">
+                                            <i class="iconfont icon-DOCX file-icon"></i>
+                                        </div>
+                                    </a>
+                                    <!-- <img class="file-img" src="@/assets/images/pdf.png" alt=""> -->
                                     <div class="file-text-con">
                                         <h5>命题_1.doc</h5>
                                         <h6>这是给文件备注描述这是给文件备注描述这是给文件备注描述</h6>
                                     </div>
                                 </div>
                                 <div class="file-item">
-                                    <img class="file-img" src="@/assets/images/pdf.png" alt="">
+                                    <a href="javascript:;">
+                                        <div class="file-img">
+                                            <i class="iconfont icon-PDF file-icon"></i>
+                                        </div>
+                                    </a>
+                                    <!-- <img class="file-img" src="@/assets/images/pdf.png" alt=""> -->
                                     <div class="file-text-con">
                                         <h5>命题_1.doc</h5>
                                         <h6>这是给文件备注描述这是给文件备注描述这是给文件备注描述</h6>
                                     </div>
                                 </div>
                                 <div class="file-item">
-                                    <img class="file-img" src="@/assets/images/pdf.png" alt="">
+                                    <a href="javascript:;">
+                                        <div class="file-img">
+                                            <i class="iconfont icon-PDF file-icon"></i>
+                                        </div>
+                                    </a>
+                                    <!-- <img class="file-img" src="@/assets/images/pdf.png" alt=""> -->
                                     <div class="file-text-con">
                                         <h5>命题_1.doc</h5>
                                         <h6>这是给文件备注描述这是给文件备注描述这是给文件备注描述</h6>
@@ -148,7 +163,11 @@
                             <div class="file-title">课堂笔记</div>
                             <div class="file-list clearfix">
                                 <div class="file-item">
-                                    <img class="file-img" src="@/assets/images/pdf.png" alt="">
+                                    <a href="javascript:;">
+                                        <div class="file-img">
+                                            <i class="iconfont icon-PDF file-icon"></i>
+                                        </div>
+                                    </a>
                                     <div class="file-text-con">
                                         <h5>命题_1.doc</h5>
                                         <h6>这是给文件备注描述这是给文件备注描述这是给文件备注描述</h6>
@@ -184,8 +203,8 @@
                                 <el-input placeholder="按时完成了订单，内容很棒，速度快，点赞！"></el-input>
                             </div>
                             <div class="row">
-                                <el-button type="primary">附件</el-button>
-                                <el-button type="primary">评论一下</el-button>
+                                <el-button type="primary" class="common-btn green-bg"><i class="iconfont icon-fujian"></i>附件</el-button>
+                                <el-button type="primary" class="common-btn blue-bg">评论一下</el-button>
                             </div>
                         </div>
                         <div class="message-list">
@@ -241,27 +260,51 @@
         </div>
 
         <!-- 内容右侧 -->
-        <div class="container-right">
+        <div class="container-right" ref="con_Right">
             <div class="common-title"><i/>参与人员</div>
             <!-- 参与人员列表 -->
-            <div class="icon-list clearfix">
+            <div id="participate" class="icon-list clearfix">
                 <div class="item">
                     <div class="item-img">
                         <img src="@/assets/images/temp/temp-head.jpg" alt="">
                         <span class="point right"></span>
                     </div>
-                    <h5>Aaron</h5>
-                    <h6>售前客服</h6>
+                    <h5>Aaron111</h5>
+                    <h6>售前客服111</h6>
                 </div>
                 <div class="item">
                     <div class="item-img">
                         <img src="@/assets/images/temp/temp-head.jpg" alt="">
                         <span class="point"></span>
                     </div>
-                    <h5>Aaron</h5>
+                    <h5>AaronAaronAaronAaron</h5>
+                    <h6>售前客服222</h6>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="@/assets/images/m_avatar.png" alt="">
+                        <span class="point"></span>
+                    </div>
+                    <h5>默认头像</h5>
                     <h6>售前客服</h6>
                 </div>
-                <div class="item blue">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="@/assets/images/m_avatar.png" alt="">
+                        <span class="point"></span>
+                    </div>
+                    <h5>默认头像</h5>
+                    <h6>售前客服</h6>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="@/assets/images/m_avatar.png" alt="">
+                        <span class="point"></span>
+                    </div>
+                    <h5>默认头像</h5>
+                    <h6>售前客服</h6>
+                </div>
+                <div class="item blue add">
                     <div class="item-img">
                         <img src="@/assets/images/add.png" alt="">
                     </div>
@@ -337,11 +380,43 @@
 </template>
 
 <script>
+// import './assets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.min.css'
+// import $ from 'jquery'
+// import './assets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js'
 export default {
     data(){
         return{
-
+            con_LeftMain_h: 0,  //左侧主内容块高度
         }
+    },
+    mounted: function(){
+        // console.log($);
+        window.onresize = _.debounce(() => {
+            let w = document.documentElement.clientWidth || document.body.clientWidth;
+            let h = document.documentElement.clientHeight || document.body.clientHeight;
+            // 左侧主内容块高度
+            let LeftCtrlList_h = this.$refs.con_LeftCtrlList.offsetHeight;
+            let LeftMain_mt = $('#con_LeftMain').css('marginTop');
+            LeftMain_mt = LeftMain_mt.substr(0,LeftMain_mt.length-2);
+            this.con_LeftMain_h = h-60-LeftCtrlList_h-LeftMain_mt;
+
+            // 左右侧宽度
+            let container_r_w = 330;
+            if (w>1800){
+                container_r_w = 450;
+            }
+            if (w<1400){
+                container_r_w = 250;
+            }
+            
+            // $('.container-left').width(w-sidebar_w-order_aside_w-container_r_w-20);
+            // $('.container-right').width(container_r_w);
+        }, 400)
+        window.onresize();
+
+        $("#con_LeftMain").mCustomScrollbar({
+            theme:"minimal-dark"
+        })
     },
     methods: {
         
@@ -349,7 +424,17 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.clearfix() {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
 //通用文件块（文件内容）
 .common-file-block{
     .file-title{
@@ -377,8 +462,28 @@ export default {
                 width: 50px;
                 height: 68px;
             }
+            &>a{
+                float: left;
+                display: block;
+                .clearfix();
+                width: 50px;
+                height: 68px;
+                margin-right: 8px;
+                .file-img{
+                    width: 50px;
+                    height: 68px;
+                }
+            }
+            .file-icon{
+                float: left;
+                margin-left: -13px;
+                margin-right: -5px;
+                line-height: 68px;
+                text-align: center;
+                font-size: 76px!important;
+            }
             .file-text-con{
-                position: relative;
+                // position: relative;
                 height: 68px;
                 h5{
                     margin: 5px 0 0 0;
@@ -478,7 +583,7 @@ export default {
     .text{
         position: absolute;
         bottom: 0;
-        width: 60px;
+        width: 100%;
         height: 20px;
         line-height: 20px;
         font-size: 12px;
@@ -491,16 +596,16 @@ export default {
 
 section{
     display: flex;
-    width: 1280px;  //这个为什么要加200?
+    // width: 1280px;  //这个为什么要加200?
     height: 100%;
 
     // 左侧内容
     .container-left{
         // position: relative;
         // flex: 0 0 805px;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
+        // display: flex;
+        // flex: 1;
+        // flex-direction: column;
         width: 805px;
         height: 100%;
         
@@ -516,20 +621,20 @@ section{
             -webkit-box-sizing: border-box;
             -o-box-sizing: border-box;
             -ms-box-sizing: border-box;
-            .btn-edit{
-                width: 100px;
-            }
-            .btn-copy{
-                width: 100px;
-            }
-            .btn-download{
-                width: 166px;
-            }
-            .btn-add{
-                width: 100px;
-            }
+            // .btn-edit{
+            //     width: 100px;
+            // }
+            // .btn-copy{
+            //     width: 100px;
+            // }
+            // .btn-download{
+            //     width: 166px;
+            // }
+            // .btn-add{
+            //     width: 100px;
+            // }
         }
-        .main{
+        .container-left-main{
             overflow-y: auto;
         }
         // 信息块
@@ -552,14 +657,18 @@ section{
             }
         }
         // 流程进度
+        @point-color: #abbac3;
+        @point-color-focus: #3291ee;
         .process{
             padding: 20px;
-            width: 740px;
+            max-width: 780px;
             .process-item{
                 float: left;
                 position: relative;
                 width: 148px;
+                width: 20%;
                 height: 110px;
+                padding-bottom: 15px;
                 // background: #2790f5;
                 h5,h6{
                     margin: 0;
@@ -570,71 +679,81 @@ section{
                     color: #333;
                 }
                 h6{
+                    font-size: 12px;
                     color: #999;
                 }
-                // 圆点
+                // 圆点和线
                 .point{
-                    position: absolute;
-                    left: 20px;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    background-color: #1db934;
-                    &:before{
-                        content: "";
+                    // 圆点
+                    &>span{
                         display: block;
                         position: absolute;
-                        left: -148px;
-                        top: 4px;
-                        width: 148px;
+                        left: 10%;
+                        top: -4px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: @point-color;
+                        z-index: 2;
+                    }
+                    // 线
+                    &>i{
+                        position: absolute;
+                        left: -90%;
+                        width: 100%;
                         height: 2px;
-                        background-color: #1db934;
+                        background-color: @point-color;
+                    }
+                }
+                // 第1个
+                &:first-child{
+                    .point{
+                        &>i{
+                            height: 0;
+                        }
                     }
                 }
                 // 第5个后反过来
                 &:nth-child(n+6){
                     float: right;
                     .point{
-                        &:before{
-                            left: 0px;
+                        &>i{
+                            left: 10%;
                         }
                     }
                 }
                 &:nth-child(6){
                     .point{
-                        &:before{
-                            left: 0px;
-                            top: -106px;
-                            width: 140px;
-                            height: 108px;
-                            border: 2px solid #1db934;
+                        // 线
+                        &>i{
+                            top: -110px;
+                            width: 100%;
+                            height: 112px;
+                            border: 2px solid @point-color;
                             border-left: none;
-                            border-radius: 4px;
+                            border-top-right-radius: 4px;
+                            border-bottom-right-radius: 4px;
                             background: none;
                         }
                     }
                     &.focus{
                         .point{
-                            &:before{
-                                border: 2px solid #3291ee;
-                                border-left: none;
+                            &>i{
                                 background: none;
                             }
                         }
                     }
                 }
-                &:first-child{
-                    .point:before{
-                        width: 0;
-                    }
-                }
                 // 触发
                 &.focus{
                     .point{
-                        background-color: #3291ee;
-                        &:before{
-                            background-color: #3291ee;
+                        span,i{
+                            background-color: @point-color-focus;
                         }
+                        &>i{
+                            border-color: @point-color-focus;
+                        }
+                        
                     }
                 }
             }

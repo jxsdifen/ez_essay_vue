@@ -10,8 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "element-ui": "^2.3.4",
+    "jquery": "^3.3.1",
+    "jquery-mousewheel": "^3.1.13",
     "vue": "^2.5.2",
+    "vue-fullcalendar": "^1.0.9",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

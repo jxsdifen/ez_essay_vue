@@ -5,11 +5,11 @@ import Login from '@/views/Login'
 import NotFound from '@/views/404'
 
 import Main from '@/views/Main'
-import Home from '@/views/Home'
+import HomeAdmin from '@/views/home/HomeAdmin'
 
 //订单管理
 import OrderMain from '@/views/order/OrderMain'
-import OrderList from '@/views/order/OrderList'
+import OrderDetail from '@/views/order/OrderDetail'
 import OrderAdd from '@/views/order/OrderAdd'
 //会员管理
 import MemberList from '@/views/member/MemberList'
@@ -62,7 +62,7 @@ export default new Router({
     {
       path: '/', component: Main,
       children: [
-        { path: 'home',name: 'Home',component: Home }
+        { path: 'home',name: 'Home',component: HomeAdmin }
       ]
     },
     // 订单管理
@@ -72,7 +72,7 @@ export default new Router({
         // { path: 'order/list',name: 'OrderList',component: OrderList }
         { path: 'order',component: OrderMain,
           children: [
-            { path: 'list',name: 'list',component: OrderList },
+            { path: 'detail',name: 'detail',component: OrderDetail },
             { path: 'add',name: 'addOrder',component: OrderAdd }
           ]
         }
